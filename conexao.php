@@ -1,7 +1,7 @@
 <?php
 $servidor = "localhost";
-$usuario = "seu_usuario_mysql";
-$senha = "sua_senha_mysql";
+$usuario = "meu_usuario_mysql";
+$senha = "minha_senha_mysql";
 $banco = "gerenciamento_usuarios";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
