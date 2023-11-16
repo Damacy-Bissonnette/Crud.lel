@@ -1,40 +1,30 @@
 <?php
 include('conexao.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-
-    $inserir = $conexao->prepare("INSERT INTO usuarios (nome, email) VALUES (?, ?)");
-    $inserir->bind_param("ss", $nome, $email);
-    $inserir->execute();
-
-    if ($inserir->affected_rows > 0) {
-        echo "Usuário cadastrado com sucesso!";
-    } else {
-        echo "Erro ao cadastrar usuário.";
-    }
-
-    $inserir->close();
-}
+$resultado = $conexao->query("SELECT * FROM usuarios");
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Usuário</title>
+    <title>Listagem de Usuários</title>
 </head>
 <body>
-    <h2>Cadastro de Usuário</h2>
-    <form method="post" action="">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required>
-        <br>
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" required>
-        <br>
-        <button type="submit">Cadastrar</button>
-    </form>
+    <h2>Listagem de Usuários</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+        <?php while ($usuario = $resultado->fetch_assoc()) : ?>
+            <tr>
+                <td><?= $usuario['id'] ?></td>
+                <td><?= $usuario['nome'] ?></td>
+                <td><?= $usuario['email'] ?></td>
+            </tr>
+        <?php endwhile; ?>
+    </table>
 </body>
 </html>
