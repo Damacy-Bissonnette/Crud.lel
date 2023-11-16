@@ -14,5 +14,11 @@ if ($conn->connect_error) {
 
 if ($conexao->connect_error) {
     die("Falha na conexão: " . $conexao->connect_error);
+
+}$result = $conn->query($sql);
+
+if (!$result) {
+    die("Query failed: " . $conn->error);
 }
+
 ?>
