@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Gerenciamento de Usuários</title>
-</head>
-<body>
-    <h1>Bem-vindo ao Sistema de Gerenciamento de Usuários</h1>
-    <p>Escolha uma opção:</p>
-    
-    <ul>
-        <li><a href="cadastro_usuario.php">Cadastro de Usuário</a></li>
-        <li><a href="listagem_usuarios.php">Listagem de Usuários</a></li>
-    </ul>
 
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Students</title>
     <link rel="stylesheet" href="estilos.css">
+    
+    <meta charset="UTF-8">
+    <title>Celke - Editar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .student {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .error-message {
+            color: #f00;
+        }
+    </style>
+    <script>
+        // JavaScript para fechar mensagens de sucesso após alguns segundos
+        setTimeout(function () {
+            document.getElementById("success-message").style.display = "none";
+        }, 5000);
+    </script>
+    
 </head>
+
 <body>
     <h1>Estudantes Universitários</h1>
     <div id="students-container"></div>
 
     <script src="script.js"></script>
-    
+
+    <h1>Bem-vindo ao Sistema de Gerenciamento de Usuários</h1>
+    <p>Escolha uma opção:</p>
+
+    <ul>
+        <li><a href="cadastro_usuario.php">Cadastro de Usuário</a></li>
+        <li><a href="listagem_usuarios.php">Listagem de Usuários</a></li>
+    </ul>
 </body>
+
 </html>

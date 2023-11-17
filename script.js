@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Fetch data from PHP endpoint
     fetch('api.php')
         .then(response => response.json())
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             data.forEach(student => {
                 const studentCard = document.createElement('div');
                 studentCard.className = 'student';
-                studentCard.innerHTML = `<strong>ID:</strong> ${student.id}<br><strong>Name:</strong> ${student.name}<br><strong>Major:</strong> ${student.major}`;
+                studentCard.innerHTML = `<strong>ID:</strong> ${student.id}<br><strong>Nome:</strong> ${student.nome}<br><strong>Curso:</strong> ${student.curso}`;
                 studentsContainer.appendChild(studentCard);
             });
         })
